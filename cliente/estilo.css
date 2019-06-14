@@ -1,0 +1,350 @@
+.botonProfesor{
+  padding: 14px 40px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 8px;
+}
+.botonProfesor:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.botonAlumno{
+  padding: 14px 40px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+}
+.botonAlumno:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+#emailUsuario, #inicioBtn2, #inicioBtnAlumno, #passwordUser, #passwordUserAlumno{
+	width: 100%;
+}
+
+#registroBtn, #email, #nick, #password, #password2, #passwordP, #passwordA,#password2A,#nombre,#apellidos,#centro{
+  width: 70%;
+  display: block; 
+  margin: auto; 
+}
+#emailAc, #oldpass, #newpass, #newpass2{
+  width: 60%;
+  display: block; 
+  margin: auto; 
+}
+
+#edad,#curso{
+  width: 40%;
+  display: block; 
+  margin: auto; 
+}
+#nombreEjercicio, #crearEjercicioBtn, #verEjercicioBtn{
+	width: 50%;
+}
+#textoEjercicio{
+  width: 100%;
+}
+#nombreEjercicioInput,#nickEjercicioInput{
+  width: 30%;
+}
+#truncaTexto{
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+.button1{
+  border-radius: 4px;
+  padding: 3px 8px;
+  background-color: #f4511e;
+  text-align: center;
+  color: white;
+  opacity: 0.6;
+  margin: 8px 4px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button1:hover {
+  opacity: 1
+}
+
+img.derecha{
+  float:right;
+}
+
+#image{
+  margin-right: 0;
+}
+
+#mostrarEjerciciosProfesor {
+  height: 528px;
+  width: 200px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  overflow-y: scroll;
+}
+#ejerciciosProfesor{
+  height: auto;
+}
+
+.caja { 
+font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+color: #ffffff; 
+font-size: 18px; 
+font-weight: 400; 
+text-align: center; 
+background: #889ccf; 
+margin: 0 0 25px; 
+overflow: hidden; 
+padding: 20px; 
+border-radius: 35px 0px 35px 0px; 
+-moz-border-radius: 35px 0px 35px 0px; 
+-webkit-border-radius: 35px 0px 35px 0px; 
+border: 2px solid #5878ca;
+}
+
+.caja2{
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #fef5c4;
+  margin: 10 10 25px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.box-green{
+  margin:0 0 25px;
+  overflow:hidden;
+  padding:20px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color:#d9edc2;
+  border:1px solid #b2ce96;
+
+}
+
+.box-blue{
+  margin:0 0 25px;
+  overflow:hidden;
+  padding:20px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color:#889ccf;
+  border:1px solid #afcde3;
+
+}
+
+
+
+
+/*#formRegistro p, #formInicio p{
+	color:red;
+	font-size: 12pt;
+
+}*/
+
+#conNoCoinciden, #con4, #formInicio p,#formInicioAlumno p, #emailInv{
+	color:yellow;
+	font-size: 12pt;
+}
+
+#passwordP{
+  color:white;
+  font-size: 8pt;
+  text-align:left;
+}
+
+/*#menu1 p, #menu1A p, #menu2 p, #menu2A p, #menu3A p{
+	text-align: left;
+	margin-bottom: 0%;
+}
+
+#menu1 .form-control, #menu2 .form-control, #menu1A .form-control, #menu2A .form-control, #menu3A .form-control{
+	width: 20%;
+}*/
+
+
+
+#home h3{
+	color:black;
+}
+
+
+#login-dp,#login-dpA{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block,#login-dp2 .help-block{
+    font-size:12px    
+}
+#login-dp .bottom, #login-dpA .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons, #login-dpA .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a, #login-dpA .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group, #login-dpA .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp,#login-dpA{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom, #login-dpA .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+
+
+
+
+body, html {
+   background-color: #F0F4EC
+}
+
+.jumbotron{
+	background-color: #AD491D;
+	
+	border-radius: 30%;
+	border: 3px solid #BADA55;
+	border-color: white;
+	color: white;
+}
+
+.bg {
+}
+
+h3{
+	color:white;
+}
+
+#creaEjercicio{
+  color:black;
+}
+
+.col-md-1{
+	transition: transform .2s;	
+}
+
+
+.col-md-1:hover {
+    -ms-transform: scale(2); /* IE 9 */
+    -webkit-transform: scale(2); /* Safari 3-8 */
+    transform: scale(2); 
+	z-index: 50;
+}
+
+.navbar{
+	padding-top:10px;
+	padding-bottom:10px;
+	border:1 solid;
+	border-color: black;
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size:12px;
+	letter-spacing: 2px;
+
+	
+	background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+
+}
+
+.boton{
+  width:70px;
+  height:70px;
+  background-color:#03800b;
+  margin: 5px;
+  padding:10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 100px;
+  border-color: black;
+  font-size:11px;
+  line-height:32px;
+  text-transform: uppercase;
+  
+}
+.boton:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
+}
+
+
+.w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#286090!important}
+
+
+
+.dropdown-menu li a{
+  text-align: center;
+
+}
+
+#dropdown{
+  left:28%;
+
+}
+
+.navbar-default .navbar-nav li a {
+	color:white;
+}
+
+.navbar-default .navbar-nav li a:hover {
+	color:white;
+}
+
+.table td{
+  text-align:center;
+  
+  width:900px;
+}
+
+.table th{
+  text-align:center;
+  
+}
+
+
+.navbar-default .navbar-nav li a:focus, .navbar-default .navbar-nav li a:hover {
+	color:white;
+}

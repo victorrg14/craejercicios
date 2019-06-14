@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LECTOCRA</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="cliente/estilo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/cliente/src/jquery.tablesorter.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <script src="cliente/src/clienteRest.js"></script>
+  <script src="cliente/src/controlWeb.js"></script>
+  
+</head>
+<body>
+
+<div class="bg">
+  
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a id="inicio_d" class="navbar-brand" href="#" style="color:white; font-weight: bold;" onclick="mostrarInicio();">INICIO</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right" id="btnLogin">
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="container text-center" id="cabecera">
+    <div class="jumbotron text-center" id="granCabecera">
+      <h1>LECTOCRA</h1>
+      <p>¡Aprende a escribir!</p> 
+    </div>
+  </div>
+
+
+    
+  <div class="container">
+
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Baja de usuario</h4>
+        </div>
+        <div class="modal-body">
+          <p style='color:red'>Usuario correctamente eliminado</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+
+  
+  <div class="modal fade" id="myModalAlumnoRegistrado" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style='color:green'>Alumno registrado de manera correcta</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" href="#">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModalAlumnoActualizado" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style='color:green'>Alumno actualizado de manera correcta</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" href="#">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+ <div class="modal fade" id="myModalInstrucciones" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Instrucciones</h4>
+       </div>
+       <div class="modal-body">
+         <h3 style="font-weight:bold; color:black;">Crear ejercicio de forma correcta</h3>
+         <p>Para poder crear el ejercicio deberá de rellenar los tres campos siguientes:Nombre, texto y respuesta.</p>
+         <p>En el campo texto, rellenará un ejercicio según su gusto, introduciendo el carácter "@" para una posible respuesta, por ejemplo, para un ejercicio de signos de puntuación:</p>
+         <p style="font-weight:bold; color:black;">El perro@ quería comer pienso@ pero no ha@ía en casa@ </p>
+         <p>Tendríamos cuatro posibles respuestas, en función de los espacios que ha introducido, antes de "quería", "pero" y "casa" y entre "ha" y "ía"</p>
+         <p>El campo respuesta, se colocarán únicamente las respuestas, sin el texto, y separadas por un espacio, es decir, para el texto de arriba serían las siguientes cuatro respuestas: </p>
+         <p style="font-weight:bold; color:black;">NADA , b .</p>
+         <p>Para las respuesta en las que no sea necesario un signo de puntuación o letra, se colacará como respuesta NADA, para el resto, el elemento correspondiente.</p>
+         <p>La solución por tanto sería: "El perro quería comer pienso, pero no había en casa."</p>
+         <p>El campo dificultad se rellena el función de la dificultad que considere el profesor.</p>
+         <a href="https://www.youtube.com/watch?v=D71dCGmTOHs&feature=youtu.be" target="_blank">Acceda al vídeo de ayuda</a>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+  <div class="modal fade" id="myModalInstruccionesAlumno" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Instrucciones</h4>
+       </div>
+       <div class="modal-body">
+         <h3 style="font-weight:bold; color:black;">Responder ejercicio de forma correcta</h3>
+         <p>Para poder responder el ejercicio deberá de completar todos los huecos con una posible respuesta.</p>
+         <p>Si considera que la respuesta es un campo vacío, debera de escribir "NADA", en otro caso la respuesta que considere correcta</p>
+         <p>Puedes fijarte el siguiente ejemplo:</p>
+         <p style="font-weight:bold; color:black;">El perro __ quería comer pienso __ pero __ no ha_ía en casa __</p>
+         <p style="font-weight:bold; color:black;"> Respuesta: 1)NADA 2), 3)NADA 4)b 5).</p>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+ <div class="modal fade" id="myModalEjercicioCreado" role="dialog">
+   <div class="modal-dialog">
+
+    <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Ejercicio creado de forma correcta</h4>
+       </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-default" href="#" data-dismiss="modal" >Cerrar</button>
+        </div>
+     </div>
+
+   </div>
+ </div>
+
+  <div class="modal fade" id="myModalEjercicioEliminado" role="dialog" data-id_elemento="">
+   <div class="modal-dialog">
+
+    <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title" style='color:red'>¿Estás seguro que quieres eliminar el ejercicio?</h4>
+       </div>
+       <div class="modal-body">
+          <p>Si lo eliminas, no podrás recuperar el ejercicio eliminado</p>
+        </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="rest.obtenerEjerciciosProfesor()">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="rest.eliminarEjercicio($('#myModalEjercicioEliminado').data('id_elemento'))">Eliminar</button>
+        </div>
+     </div>
+
+   </div>
+ </div>
+
+   <div class="modal fade" id="myModalEjerEl" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style='color:red'>Ejercicio eliminado de manera correcta</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" href="#" data-dismiss="modal" >Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+   <div class="modal fade" id="myModalEliminarProfesor" role="dialog" >
+   <div class="modal-dialog">
+
+    <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title" style='color:red'>¿Estás seguro que quieres darte de baja?</h4>
+       </div>
+       <div class="modal-body">
+          <p>Si te das de baja no podrás recuperar tu información</p>
+        </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="mostrarActualizarEliminar();">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="rest.eliminarProfesor();">Eliminar</button>
+        </div>
+     </div>
+
+   </div>
+ </div>
+
+  <div class="modal fade" id="myModalAlEl" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style='color:red'>Alumno eliminado de manera correcta</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" href="#" data-dismiss="modal" >Cerrar</button>
+        </div>
+     </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModalAlumnoEliminado" role="dialog" data-id_elemento="">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title" style='color:red'>¿Estás seguro que quieres eliminar al alumno?</h4>
+       </div>
+       <div class="modal-body">
+          <p>Si lo eliminas, no podrás recuperar al alumno eliminado</p>
+        </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="rest.obtenerAlumnos()">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="rest.eliminarAlumnoPorProfesor($('#myModalAlumnoEliminado').data('id_elemento'))">Eliminar</button>
+        </div>
+     </div>
+
+   </div>
+ </div>
+
+
+
+    <div class="col-sm-12" id="tablas">
+    </div> 
+
+    <div class="row">
+
+      
+      <div class="col-sm-6">
+        <div id="inicio"></div>
+      </div>
+      <div class="col-sm-6">
+        <div id="listaEjercicios"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container text-center">
+    <div id="logoInicio">
+      
+    </div>   
+    <div class="row">
+      <div class="col-sm-2">
+          <div id="nada1"></div>
+        </div> 
+        <div class="col-sm-8">
+          <div id="registro"></div>
+        </div>
+        <div class="col-sm-2">
+          <div id="nada2"></div>
+        </div>       
+      </div>
+    <div class="row">
+      <div class="row">
+        <div id="datos">
+        </div>
+      </div>
+      <div class="row">
+        <div id="texto">
+          
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="borrador"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="infoAlumno"></div>
+        </div>       
+      </div>
+      <div class="row">
+        <div id="respuestaCorrecta">
+        </div>
+      </div>   
+    </div>
+  </div>
+</div>
+<script>
+  rest=new ClienteRest();
+
+  comprobarUsuario();
+
+</script>
+
+
+
+</body>
+</html>

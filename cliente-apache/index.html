@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="cliente-apache/css/materialize.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="cliente-apache/css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" type="text/css" href="cliente-apache/css/index.css">
+        <script src="cliente-apache/js/jquery-3.3.1.min.js"></script>
+        <!--<script type="text/javascript" src="jquery.tablesorter.js"></script>-->
+        <script type="text/javascript" src="cliente-apache/js/materialize.js"></script>
+        <script type="text/javascript" src="cliente-apache/js/materialize.min.js"></script>
+        <script src="cliente-apache/js/clienteRest.js"></script>
+
+        <title>ejercicio</title>
+    </head>
+    <body>
+        <nav class="blue" style="padding: 0px 10px;">
+            <div class="nav-wrapper" id="navSide">
+                <a href="#" id="logo" class="brand-logo">LECTOCRA</a>
+                
+                    
+                
+                <ul class="right hide-on-med-and-down" id="navBar">
+                    
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-nav">
+            
+        </ul>
+
+        <div class="app">
+            <div id="deviceready" class="blink">
+                <p class="event listening"></p>
+                <p class="event received"></p>
+            </div>
+        </div>
+
+    
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Salir del ejercicio</h4>
+                <p>¿Estás seguro de que quieres salir?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" onclick="app.abandonarEjercicio();" class="modal-close waves-effect waves-green btn-flat">Salir</a>
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancelar</a>
+            </div>
+        </div>
+        
+
+        <div class="container text-center" >
+            
+            <div class="col s12" id="user-login"></div>
+    
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s12" id="messageDiv"></div>
+                </div>
+                <div class="row">
+                    <div id="texto"></div>
+                </div>
+            </div>
+            <div class="col s12" id="resultado"></div>
+        </div>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="cliente-apache/js/index.js"></script>
+        <script >
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
+        </script>
+        
+    </body>
+</html>

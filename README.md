@@ -1,2 +1,2 @@
 # craejercicios
-Sistema para el fomento de la lectura en los CRA. La solución está basada en una arquitectura orientada a servicios y dos clientes, un cliente web y otro móvil.
+Este proyecto se trata de un sistema orientado al fomento de la lectoescritura en los Centro Rurales Agrupados (CRA). El motivo del proyecto es la realización del TFG de la intensificación de Ingeniería del Software del grado de Ingeniería Informática. La solución se ha basado en una arquitectura de servicios desplegada en Heroku con dos tipos de clientes, un cliente web y un cliente móvil. El enlace para acceder al sistema es el siguiente: https://craejercicios.herokuapp.com/

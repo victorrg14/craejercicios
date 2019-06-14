@@ -1,0 +1,118 @@
+
+body
+{
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    background: #f5f5f5;
+    height:100%;
+    margin:0px;
+    padding:0px;
+   
+    width:100%;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h5
+{
+    font-weight: 400;
+}
+
+.container
+{
+    margin-top: 80px;
+    width: 400px;
+    height: 700px;
+}
+
+.tabs .indicator
+{
+    background-color: #e0f2f1;
+    height: 60px;
+    opacity: 0.3;
+}
+
+.form-container
+{
+    padding: 40px;
+    padding-top: 10px;
+}
+
+.confirmation-tabs-btn
+{
+    position: absolute;
+}
+
+/* Portrait layout (default) */
+
+
+
+.box-blue{
+  margin:0 0 25px;
+  overflow:hidden;
+  padding:20px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color:#889ccf;
+  border:1px solid #afcde3;
+
+}
+
+.caja { 
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  color: #ffffff; 
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: center; 
+  background: #2096F3; 
+  margin: 0 0 25px; 
+  overflow: hidden; 
+  padding: 20px; 
+  border-radius: 35px 35px 35px 25px; 
+  -moz-border-radius: 35px 35px 35px 35px; 
+  -webkit-border-radius: 35px 35px 35px 35px; 
+  border: 2px solid #5878ca;
+}
+
+.caja2 { 
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  color: #ffffff; 
+  font-size: 30px; 
+  font-weight: 400; 
+  text-align: center; 
+  background: #2096F3; 
+  margin: 0 0 25px; 
+  overflow: hidden; 
+  padding: 20px; 
+  border-radius: 35px 35px 35px 25px; 
+  -moz-border-radius: 35px 35px 35px 35px; 
+  -webkit-border-radius: 35px 35px 35px 35px; 
+  border: 2px solid #5878ca;
+}
+
+.a + .b {
+  margin-top: 2em;
+}
+
+.b + .c {
+  margin-top: 2em;
+}
+
+.c + .reinicio {
+  margin-top: 2em;
+}
+
+textarea:focus input:focus, input[type]:focus{
+  border-color: #2096F3; 
+  box-shadow: 0 1px 1px rgba(30, 45, 126, 0.075)inset, 0 0 8px rgba(30, 45, 126,0.6);
+  outline: 0 none; /* Cuando se selecciona este elemento crece a 160px */
+}
+
